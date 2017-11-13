@@ -17,8 +17,8 @@
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "extension.generate",
+                "title": "Generate random value"
             }
         ]
     },
