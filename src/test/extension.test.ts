@@ -9,14 +9,16 @@ import * as assert from 'assert';
 // You can import and use all API from the 'vscode' module
 // as well as import your extension to test it
 import * as vscode from 'vscode';
-import * as myExtension from '../extension';
+import { UuidValue } from '../values/uuidValue';
 
 // Defines a Mocha test suite to group tests of similar kind together
-suite("Extension Tests", () => {
+suite("Uuid generator", () => {
 
     // Defines a Mocha unit test
-    test("Something 1", () => {
-        assert.equal(-1, [1, 2, 3].indexOf(5));
-        assert.equal(-1, [1, 2, 3].indexOf(0));
+    test("It should return a valid uuid", () => {
+        const uuidPattern: RegExp = /[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/;
+        const value = new UuidValue();
+        const uuid:string = value.generate();
+        assert.equal(true, uuidPattern.test(uuid));
     });
 });
