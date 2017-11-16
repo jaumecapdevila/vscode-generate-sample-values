@@ -23,8 +23,8 @@ export function activate(context: vscode.ExtensionContext) {
                 'uuid',
                 'name'
             ]).then((geneartor) => {
-                const generator = new Generator();
-                let value;
+                const generator: Generator = new Generator();
+                let value: Value;
                 switch (geneartor) {
                     case 'uuid':
                         value = new UuidValue();
