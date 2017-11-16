@@ -25,7 +25,7 @@ suite("Generator", () => {
     });
 
     test("It should return a valid name", () => {
-        const namePattern: RegExp = /(Mr\.|Mrs\.) ([a-z]{16})/;
+        const namePattern: RegExp = /(Mr\.|Mrs\.) ([a-z]{10})/;
         const value: Value = new NameValue();
         const name: string = value.generate();
         assert.equal(true, namePattern.test(name));
